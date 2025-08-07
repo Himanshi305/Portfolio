@@ -103,14 +103,6 @@ export default function Home() {
             >
               '20
             </motion.span>
-            <motion.p
-              className="text-xl text-gray-300 mt-2 font-sora"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              HIMANSHI GUPTA
-            </motion.p>
           </div>
           <motion.div
             className="relative"
@@ -122,7 +114,6 @@ export default function Home() {
             {/* Avatar placeholder - you can replace with actual image */}
             <div className="w-90 h-50 flex items-center justify-center shadow-lg bg-gradient-to-br from-[#111111] to-gray-700 rounded-lg p-10">
               <img src="avatar.png" alt="avatar" />
-              <Lanyard />
 
             </div>
           </motion.div>
@@ -138,22 +129,9 @@ export default function Home() {
         {/* Left Column - Introduction */}
         <motion.div className="space-y-8" variants={itemVariants}>
           <div className="flex items-start space-x-6">
-            {/* Photo with lanyard */}
-            <motion.div
-              className="relative"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="w-24 h-32 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border-2 border-gray-600 relative">
-                <Image
-                  src="/avatar.png"
-                  alt="Avatar"
-                  layout="fill"
-                  className="object-cover rounded-lg"
-                />
-              </div>
-            </motion.div>
-
+            <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg">
+              <Lanyard />
+            </div>
             <div className="flex-1">
               <motion.h2
                 className="text-4xl font-bold text-white mb-4 font-sora"
@@ -164,7 +142,7 @@ export default function Home() {
               <motion.p
                 className="text-gray-300 leading-relaxed font-siri"
                 variants={itemVariants}
-              >
+                >
                 I am a Full Stack Developer and I love solving problems, and
                 making things feel right. I am a quick learner and I am always
                 looking to improve my skills. I can work in a team and I am a
