@@ -7,6 +7,7 @@ import { useRef } from "react";
 import Content from "./componenets/content";
 import Project from "./componenets/project";
 import Lanyard from "./componenets/ui/Lanyard";
+import OnekoCat from "./componenets/OnekoCat";
 
 import {
   FaDiscord,
@@ -277,6 +278,7 @@ export default function Home() {
       </motion.div>
       <Content />
       <Project />
+      <OnekoCat />
     </motion.div>
   );
 }
