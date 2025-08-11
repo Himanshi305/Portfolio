@@ -8,7 +8,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 // Assets are now in public directory and referenced as URLs
 const cardGLB = "/card.glb";
-const lanyard = "/lanyard.png";
+const lanyard = "/me.png";
 
 import * as THREE from 'three';
 

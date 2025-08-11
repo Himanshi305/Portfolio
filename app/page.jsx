@@ -8,6 +8,7 @@ import Content from "./componenets/content";
 import Project from "./componenets/project";
 import Lanyard from "./componenets/ui/Lanyard";
 import OnekoCat from "./componenets/OnekoCat";
+import { GitCommitGraph } from "./componenets/gitcommits";
 
 import {
   FaDiscord,
@@ -17,11 +18,7 @@ import {
   FaReact,
   FaNodeJs,
 } from "react-icons/fa";
-import {
-  SiJavascript,
-  SiMongodb,
-} from "react-icons/si";
-
+import { SiJavascript, SiMongodb } from "react-icons/si";
 
 export default function Home() {
   const lenis = useLenis();
@@ -79,23 +76,23 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-
       {/* Header Section */}
       <motion.header
         className="mb-12"
         variants={headerVariants}
         style={{ y: headerY }}
       >
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col md:flex-row items-start justify-between">
           <div className="relative">
             <motion.h1
-              className="text-8xl font-bold text-white leading-none font-sora"
+              className="md:text-8xl text-7xl font-bold text-white leading-none font-sora"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
               PORTFOLIO
             </motion.h1>
+            <GitCommitGraph />
             <motion.span
               className="absolute -top-2 right-0 text-2xl text-gray-400"
               initial={{ opacity: 0, scale: 0 }}
@@ -113,9 +110,15 @@ export default function Home() {
             whileHover={{ scale: 1.1, rotate: 5 }}
           >
             {/* Avatar placeholder - you can replace with actual image */}
-            <div className="w-90 h-50 flex items-center justify-center shadow-lg bg-gradient-to-br from-[#111111] to-gray-700 rounded-lg p-10">
-              <img src="avatar.png" alt="avatar" />
-
+            <div className="relative w-32 md:w-90 h-12 md:h-38 flex items-center justify-center shadow-lg bg-gradient-to-br from-[#111111] to-gray-700 rounded-lg p-3 md:p-0 left-10/12 md:left-0">
+              <Image
+                src="/avatar.png"
+                alt="avatar"
+                width={192}
+                height={192}
+                className="object-cover rounded-lg"
+                priority
+              />
             </div>
           </motion.div>
         </div>
@@ -143,7 +146,7 @@ export default function Home() {
               <motion.p
                 className="text-gray-300 leading-relaxed font-siri"
                 variants={itemVariants}
-                >
+              >
                 I am a Full Stack Developer and I love solving problems, and
                 making things feel right. I am a quick learner and I am always
                 looking to improve my skills. I can work in a team and I am a
@@ -160,7 +163,9 @@ export default function Home() {
         >
           {/* Experience Column 1 */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold text-white mb-4 font-sora">EXPERIENCE</h3>
+            <h3 className="text-lg font-bold text-white mb-4 font-sora">
+              EXPERIENCE
+            </h3>
             <div className="space-y-3 text-sm">
               <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <p className="font-semibold text-white font-siri">Freelancer</p>
@@ -172,7 +177,9 @@ export default function Home() {
           {/* Contact & Software Column */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <div>
-              <h3 className="text-lg font-bold text-white mb-4 font-sora">CONTACT</h3>
+              <h3 className="text-lg font-bold text-white mb-4 font-sora">
+                CONTACT
+              </h3>
               <div className="space-y-3 text-sm">
                 <motion.div
                   className="flex items-center space-x-2"
@@ -237,7 +244,9 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white mb-4 font-sora">TECH STACK</h3>
+              <h3 className="text-lg font-bold text-white mb-4 font-sora">
+                TECH STACK
+              </h3>
               <div className="grid grid-cols-4 gap-2">
                 <motion.div
                   className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-sm"
