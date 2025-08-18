@@ -8,7 +8,6 @@ import Content from "./componenets/content";
 import Project from "./componenets/project";
 import Lanyard from "./componenets/ui/Lanyard";
 import OnekoCat from "./componenets/OnekoCat";
-import { GitCommitGraph } from "./componenets/gitcommits";
 
 import {
   FaDiscord,
@@ -85,14 +84,13 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-start justify-between">
           <div className="relative">
             <motion.h1
-              className="md:text-8xl text-7xl font-bold text-white leading-none font-sora"
+              className="md:text-8xl text-6xl font-bold text-white leading-none font-sora"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
               PORTFOLIO
             </motion.h1>
-            <GitCommitGraph />
             <motion.span
               className="absolute -top-2 right-0 text-2xl text-gray-400"
               initial={{ opacity: 0, scale: 0 }}
