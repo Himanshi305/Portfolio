@@ -92,7 +92,7 @@ export default function Home() {
               PORTFOLIO
             </motion.h1>
             <motion.span
-              className="absolute -top-2 right-0 text-2xl text-gray-400"
+              className="absolute -top-2 right-0 md:text-2xl text-3xl text-gray-400"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
