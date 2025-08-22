@@ -108,7 +108,7 @@ export default function Home() {
             whileHover={{ scale: 1.1, rotate: 5 }}
           >
             {/* Avatar placeholder - you can replace with actual image */}
-            <div className="relative w-32 md:w-90 h-12 md:h-38 flex items-center justify-center shadow-lg bg-gradient-to-br from-[#111111] to-gray-700 rounded-lg p-3 md:p-0 left-10/12 md:left-0">
+            <div className="relative top-5 w-32 md:w-90 h-12 md:h-38 flex items-center justify-center shadow-lg bg-gradient-to-br from-[#111111] to-gray-700 rounded-lg m-5 md:m-0 left-10/12 md:left-0">
               <Image
                 src="/avatar.png"
                 alt="avatar"
@@ -141,22 +141,32 @@ export default function Home() {
               >
                 HI, I'm Himanshi
               </motion.h2>
-              <motion.p
+              <motion.span
                 className="text-gray-300 leading-relaxed font-siri"
                 variants={itemVariants}
               >
                 I am a Full Stack Developer and I love solving problems, and
                 making things feel right. I am a quick learner and I am always
                 looking to improve my skills. I can work in a team and I am a
-                good communicator. Peace out!
-              </motion.p>
+                good communicator.
+                <span>
+                  <ul>
+                  <li>* ReactJs professionally I'm using it for a year now </li>
+                  <li>* NodeJs, MongoDB and ExpressJs at an itermediate level</li>
+                  <li>* HTML, CSS and JavaScript professionally</li>
+                  <li>* NextJs, TailwindCSS and FramerMotion at an itermediate level</li>
+                  <li>* C, C++, Python and Java at a beginner level</li>
+                  <li>* Currently learning DSA and backend at professional level</li>
+                  <li>* And know little bit of Figma for designing</li>
+                  </ul></span>
+              </motion.span>
             </div>
           </div>
         </motion.div>
 
         {/* Right Column - Experience, Contact, Software */}
         <motion.div
-          className="grid grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 grid-cols-3 md:gap-6 gap-10"
           variants={containerVariants}
         >
           {/* Experience Column 1 */}
@@ -164,7 +174,7 @@ export default function Home() {
             <h3 className="text-lg font-bold text-white mb-4 font-sora">
               EXPERIENCE
             </h3>
-            <div className="space-y-3 text-sm">
+            <div className="md:space-y-2 text-sm">
               <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <p className="font-semibold text-white font-siri">Freelancer</p>
                 <p className="text-gray-400 font-siri">aug 2024 - feb 2025</p>
@@ -173,7 +183,7 @@ export default function Home() {
           </motion.div>
 
           {/* Contact & Software Column */}
-          <motion.div className="space-y-6" variants={itemVariants}>
+          <motion.div className="space-y-5" variants={itemVariants}>
             <div>
               <h3 className="text-lg font-bold text-white mb-4 font-sora">
                 CONTACT
@@ -242,10 +252,10 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white mb-4 font-sora">
-                TECH STACK
+              <h3 className="text-lg font-bold text-white mb-4 font-sora justify-center">
+                SKILLS
               </h3>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-4 md:gap-10 gap-10 justify-center items-center">
                 <motion.div
                   className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-sm"
                   whileHover={{ scale: 1.2, rotate: 10 }}
