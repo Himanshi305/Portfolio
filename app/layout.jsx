@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local'
 import CustomCursor from "./componenets/ui/CustomCursor";
+import OnekoCat from "./componenets/OnekoCat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="cursor-none">
       <body className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} ${sora.variable}`}>
         <CustomCursor />
+        <OnekoCat />
         {children}
       </body>
     </html>

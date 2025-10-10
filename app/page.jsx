@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useLenis } from "./hooks/useLenis";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Content from "./componenets/content";
 import Project from "./componenets/project";
 import ProjectPreview from "./componenets/ProjectPreview";
@@ -20,9 +20,53 @@ import {
 } from "react-icons/fa";
 import { SiJavascript, SiMongodb } from "react-icons/si";
 
+const skills = [
+  {
+    name: "React",
+    icon: <FaReact />,
+    color: "bg-blue-500",
+    url: "https://react.dev",
+    description: "React.js",
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs />,
+    color: "bg-green-600",
+    url: "https://nodejs.org",
+    description: "Node.js",
+  },
+  {
+    name: "JavaScript",
+    icon: <SiJavascript />,
+    color: "bg-yellow-400",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    description: "JavaScript",
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb />,
+    color: "bg-green-500",
+    url: "https://www.mongodb.com",
+    description: "Mongodb",
+  },
+];
+
 export default function Home() {
   const lenis = useLenis();
   const containerRef = useRef(null);
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -92,14 +136,6 @@ export default function Home() {
             >
               PORTFOLIO
             </motion.h1>
-            <motion.span
-              className="absolute -top-2 right-0 md:text-2xl text-3xl text-gray-400"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              '20
-            </motion.span>
           </div>
           <motion.div
             className="relative"
@@ -147,18 +183,12 @@ export default function Home() {
                 variants={itemVariants}
               >
                 I am a Full Stack Developer and I love solving problems, and
-                making things feel right. I am a quick learner and I am always
-                looking to improve my skills. I can work in a team and I am a
-                good communicator.
+                making things feel right.
                 <span>
                   <ul>
-                  <li>* ReactJs professionally I'm using it for a year now </li>
+                  <li>* ReactJs and NextJs professionally </li>
                   <li>* NodeJs, MongoDB and ExpressJs at an itermediate level</li>
                   <li>* HTML, CSS and JavaScript professionally</li>
-                  <li>* NextJs, TailwindCSS and FramerMotion at an itermediate level</li>
-                  <li>* C, C++, Python and Java at a beginner level</li>
-                  <li>* Currently learning DSA and backend at professional level</li>
-                  <li>* And know little bit of Figma for designing</li>
                   </ul></span>
               </motion.span>
             </div>
@@ -257,47 +287,49 @@ export default function Home() {
                 SKILLS
               </h3>
               <div className="grid grid-cols-4 md:gap-10 gap-10 justify-center items-center">
-                <motion.div
-                  className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-sm"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  whileTap={{ scale: 0.9 }}
-                  title="React"
-                >
-                  <FaReact />
-                </motion.div>
-                <motion.div
-                  className="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white text-sm"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  whileTap={{ scale: 0.9 }}
-                  title="Node.js"
-                >
-                  <FaNodeJs />
-                </motion.div>
-                <motion.div
-                  className="w-8 h-8 bg-yellow-400 rounded flex items-center justify-center text-white text-sm"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  whileTap={{ scale: 0.9 }}
-                  title="JavaScript"
-                >
-                  <SiJavascript />
-                </motion.div>
-                <motion.div
-                  className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white text-sm"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  whileTap={{ scale: 0.9 }}
-                  title="MongoDB"
-                >
-                  <SiMongodb />
-                </motion.div>
+                {skills.map((skill) => (
+                  <a
+                    key={skill.name}
+                    href={skill.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-none"
+                    onMouseEnter={() => setHoveredSkill(skill)}
+                    onMouseLeave={() => setHoveredSkill(null)}
+                  >
+                    <motion.div
+                      className={`w-8 h-8 ${skill.color} rounded flex items-center justify-center text-white text-sm`}
+                      whileHover={{ scale: 1.2, rotate: 10 }}
+                      whileTap={{ scale: 0.9 }}
+                      title={skill.name}
+                    >
+                      {skill.icon}
+                    </motion.div>
+                  </a>
+                ))}
               </div>
             </div>
           </motion.div>
         </motion.div>
       </motion.div>
+      {hoveredSkill && (
+        <motion.div
+          className="fixed top-0 left-0 bg-gray-800 text-white p-3 rounded-lg shadow-lg z-[9999] pointer-events-none"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          style={{
+            x: mousePosition.x + 15,
+            y: mousePosition.y + 15,
+          }}
+        >
+          <h4 className="font-bold text-pink-400">{hoveredSkill.name}</h4>
+          <p className="text-sm max-w-0.5">{hoveredSkill.description}</p>
+        </motion.div>
+      )}
       <Content />
       <ProjectPreview />
       <Project />
-      <OnekoCat />
     </motion.div>
   );
 }
