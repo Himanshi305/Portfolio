@@ -183,7 +183,7 @@ export default function Home() {
                 <span>
                   <ul>
                   <li>* ReactJs and NextJs professionally </li>
-                  <li>* NodeJs, MongoDB and ExpressJs at an itermediate level</li>
+                  <li>* NodeJs, MongoDB and ExpressJs at an intermediate level</li>
                   <li>* HTML, CSS and JavaScript professionally</li>
                   </ul></span>
               </motion.span>
