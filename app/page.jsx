@@ -22,28 +22,24 @@ import { SiJavascript, SiMongodb } from "react-icons/si";
 
 const skills = [
   {
-    name: "React",
     icon: <FaReact />,
     color: "bg-blue-500",
     url: "https://react.dev",
     description: "React.js",
   },
   {
-    name: "Node.js",
     icon: <FaNodeJs />,
     color: "bg-green-600",
     url: "https://nodejs.org",
     description: "Node.js",
   },
   {
-    name: "JavaScript",
     icon: <SiJavascript />,
     color: "bg-yellow-400",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     description: "JavaScript",
   },
   {
-    name: "MongoDB",
     icon: <SiMongodb />,
     color: "bg-green-500",
     url: "https://www.mongodb.com",
