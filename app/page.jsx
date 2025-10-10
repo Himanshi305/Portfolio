@@ -6,6 +6,7 @@ import { useLenis } from "./hooks/useLenis";
 import { useRef } from "react";
 import Content from "./componenets/content";
 import Project from "./componenets/project";
+import ProjectPreview from "./componenets/ProjectPreview";
 import Lanyard from "./componenets/ui/Lanyard";
 import OnekoCat from "./componenets/OnekoCat";
 
@@ -294,6 +295,7 @@ export default function Home() {
         </motion.div>
       </motion.div>
       <Content />
+      <ProjectPreview />
       <Project />
       <OnekoCat />
     </motion.div>

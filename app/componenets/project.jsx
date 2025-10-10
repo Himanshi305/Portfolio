@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Project() {
   // Animation variants
@@ -10,7 +11,7 @@ export default function Project() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
@@ -19,7 +20,7 @@ export default function Project() {
     hidden: { opacity: 0, scale: 0.7 },
     visible: {
       opacity: 1,
-      scale: 0.8,
+      scale: 1,
       transition: {
         duration: 0.5,
         ease: "easeOut"
@@ -59,11 +60,17 @@ export default function Project() {
     },
     {
       title: "REVEL: MOVE",
-      description: "A Full-Stack website for Travelling with budget adjustable budget and data collection",
+      description: "A Full-Stack website for Travelling with adjustable budget and data collection",
       image: "/images/revel-move.png",
-      number: 4
+      number: 4,
+      url:`https://revel-move.vercel.app/`
     }
   ];
+
+  // Generate accurate screenshot URL
+  const getScreenshotUrl = (url) => {
+    return `https://image.thum.io/get/width/400/crop/600/${encodeURIComponent(url)}`;
+  };
 
   return (
     <>
@@ -75,15 +82,16 @@ export default function Project() {
       >
         {projects.map((project, index) => (
         <motion.div key={index} 
-          className="shadow-lg bg-background/5 p-6 rounded-2xl text-white relative min-h-[400px]"
+          className="shadow-lg bg-background/5 p-6 rounded-2xl text-white relative min-h-[300px] overflow-hidden"
           variants={projectCardVariants}
           whileHover="hover"
         >
-          <a href={project.url} rel="noopener noreferrer" className="block h-full w-full">
+          <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
           <div className="space-y-4">
-            <div className="flex justify-center space-x-2">
-              <div className="w-16 h-24 bg-white rounded-lg"></div>
-              <div className="w-16 h-24 bg-white rounded-lg"></div>
+            <div className="relative w-full h-32 rounded-lg overflow-hidden bg-gray-800">
+              <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center text-white text-sm">
+                Project Preview
+              </div>
             </div>
             <h3 className="text-xl font-bold">{project.title}</h3>
             <p className="text-sm font-siri">{project.description}</p>
