@@ -40,28 +40,28 @@ export default function Project() {
     {
       title: "REVEL",
       description: "A project based on Marvel Characters and its timeline with comic API",
-      image: "/images/revel.png",
+      image: "/preview-img/revel-pre.png",
       number: 1,
       url:`https://revel-teal.vercel.app/`
     },
     {
       title: "REVEL: DOOMSDAY",
       description: "A frontend project with 3D model and animation",
-      image: "/images/revel-doomsday.png",
+      image: "/preview-img/doom-pre.png",
       number: 2,
       url:`https://revel-doom.vercel.app/`
     },
     {
       title: "REVEL: YOGA",
       description: "A frontend project with 3D model and illusion animation with some help of Figma",
-      image: "/images/revel-yoga.png",
+      image: "/preview-img/yoga-pre.png",
       number: 3,
       url:`https://revel-yoga.vercel.app/`
     },
     {
       title: "REVEL: MOVE",
       description: "A Full-Stack website for Travelling with adjustable budget and data collection",
-      image: "/images/revel-move.png",
+      image: "/preview-img/revel-move.png",
       number: 4,
       url:`https://revel-move.vercel.app/`
     }
@@ -89,9 +89,13 @@ export default function Project() {
           <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
           <div className="space-y-4">
             <div className="relative w-full h-32 rounded-lg overflow-hidden bg-gray-800">
-              <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center text-white text-sm">
-                Project Preview
-              </div>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                style={{ objectFit: "cover" }}
+                unoptimized // Adding this because the images are local
+              />
             </div>
             <h3 className="text-xl font-bold">{project.title}</h3>
             <p className="text-sm font-siri">{project.description}</p>
