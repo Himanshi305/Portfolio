@@ -110,7 +110,7 @@ export default function Home() {
                   <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg pt-20">
                     <Lanyard />
                   </div>
-                  <div className="flex-1 border border-white/20 p-6 rounded-lg bg-gray-700 opacity-60">
+                  <div className="flex-1 border border-white/20 p-6 rounded-lg bg-gray-600 opacity-60">
                     <motion.h2
                       className="text-4xl font-bold text-white mb-4 font-sora"
                       variants={itemVariants}
@@ -178,7 +178,7 @@ export default function Home() {
             </motion.div>
           </div>
           <div className="right w-1/1 flex justify-end pt-35 pb-20">
-            <div className="text-right border border-white/20 w-180 h-65 p-8 pt-5 rounded-lg bg-gray-700 opacity-60">
+            <div className="text-right border border-white/20 w-180 h-65 p-8 pt-5 rounded-lg bg-gray-600 opacity-60">
               <div className="flex justify-end space-x-9 mb-4">
                 <a
                   href="https://github.com/Himanshi305"
