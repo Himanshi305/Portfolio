@@ -212,7 +212,7 @@ export default function Home() {
                 <FaEnvelope />
                 <span>Mail me</span>
               </a>
-              <p className="text-sm text-gray-400 max-w-[280px] mx-auto">
+              <p className="text-sm text-gray-200 font-sora max-w-[330px] mx-auto">
                 I am a Full Stack Developer and I love solving problems, and
                 making things feel right.
               </p>
