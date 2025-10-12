@@ -79,8 +79,8 @@ export default function Home() {
         animate="visible"
       >
         {/* Header Section */}
-        <div className="flex ">
-          <div className="left w-1/3 ">
+        <div className="flex flex-col lg:flex-row">
+          <div className="left w-full lg:w-1/3">
             <motion.header
               className="mb-12 "
               variants={headerVariants}
@@ -100,17 +100,17 @@ export default function Home() {
 
             {/* Main Content */}
             <motion.div
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 "
+              className="grid grid-cols-1 lg:grid-cols-1 gap-12 mb-16 "
               variants={containerVariants}
               style={{ y: contentY }}
             >
               {/* Left Column - Introduction */}
               <motion.div className="space-y-8" variants={itemVariants}>
-                <div className="flex items-start space-x-6 gap-8">
-                  <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg pt-20">
+                <div className="flex items-start space-x-6 md:gap-8 gap-2">
+                  <div className="md:w-25 w-30 md:h-55 h-20 rounded-full flex items-center justify-center shadow-lg pt-20">
                     <Lanyard />
                   </div>
-                  <div className="flex-1 border border-white/20 p-10 rounded-lg bg-gradient-to-r from-[#6b7280] to-[#111111] opacity-60">
+                  <div className="flex-1 border border-white/20 md:p-10 p-3 rounded-lg bg-gradient-to-r from-[#6b7280] to-[#111111] opacity-60">
                     <motion.h2
                       className="text-4xl font-bold text-white mb-4 font-sora"
                       variants={itemVariants}
@@ -177,8 +177,8 @@ export default function Home() {
               </motion.div>
             </motion.div>
           </div>
-          <div className="right w-1/1 flex justify-end pt-40 pb-20">
-            <div className="text-right border border-white/20 w-180 h-65 p-8 pt-5 rounded-lg bg-gradient-to-l from-[#6b7280] to-[#111111] opacity-60">
+          <div className="right w-full lg:w-1/1 flex justify-end pt-10 lg:pt-40 pb-20">
+            <div className="text-right border border-white/20 w-full max-w-2xl h-fit p-8 pt-5 rounded-lg bg-gradient-to-l from-[#6b7280] to-[#111111] opacity-60">
               <div className="flex justify-end space-x-9 mb-4">
                 <a
                   href="https://github.com/Himanshi305"
