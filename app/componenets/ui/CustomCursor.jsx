@@ -38,7 +38,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 z-[9999] pointer-events-none transition-transform duration-200 ease-out"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none transition-transform duration-75 ease-out"
       style={{
         transform: `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotation}deg)`,
       }}
