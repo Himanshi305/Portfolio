@@ -107,7 +107,7 @@ export default function Home() {
               {/* Left Column - Introduction */}
               <motion.div className="space-y-8" variants={itemVariants}>
                 <div className="flex items-start space-x-6 ">
-                  <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg pt-20">
                     <Lanyard />
                   </div>
                   <div className="flex-1 border border-white/20 p-6 rounded-lg bg-gray-700 opacity-60">

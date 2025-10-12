@@ -66,9 +66,9 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     return null; // Don't render if assets aren't loaded
   }
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1.2]);
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1.2]);
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1.2]);
   useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.50, 0]]);
 
   useEffect(() => {
@@ -131,7 +131,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={2.5}
+            scale={2.9}
             position={[0, -1.5, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
