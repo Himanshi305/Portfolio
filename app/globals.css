@@ -50,6 +50,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  cursor: none;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
