@@ -36,7 +36,7 @@ const ProjectSlider = ({ projects, title }) => {
 
   return (
     <motion.div 
-      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 to-gray-700 p-8"
+      className="relative overflow-hidden rounded-2xl bg-gradient-to-l from-[#6b7280] to-black p-8"
       variants={slideVariants}
     >
       <div className="flex items-center justify-between mb-6">
