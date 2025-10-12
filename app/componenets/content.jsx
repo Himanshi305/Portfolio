@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Marquee } from "./marque"
-import { FaReact, SiC } from "react-icons/fa";
-import { SiExpress, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiExpress, SiNextdotjs, SiTailwindcss, SiJavascript, SiMongodb } from "react-icons/si";
 
 
 const languageCategories = [
@@ -31,6 +31,24 @@ const languageCategories = [
     url: "https://expressjs.com/",
     color: "#A8B9CC",
   },
+  {
+    name: "Node.js",
+    icon: FaNodeJs,
+    url: "https://nodejs.org/",
+    color: "#A8B9CC",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    color: "#A8B9CC",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    url: "https://www.mongodb.com/",
+    color: "#A8B9CC",
+  },
   
 ]
 
@@ -44,7 +62,7 @@ export default function Content() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
             >
-                    <span className="block w-full text-center font-extrabold text-4xl text-white font-sora">FRAMEWORK</span>
+                    <span className="block w-full text-center font-extrabold text-4xl text-white font-sora">EXPERIENCED IN</span>
             </motion.div>
             <Marquee className="[--duration:20s] max-w-5xl mx-auto p-6">
           {languageCategories.map((skill) => (

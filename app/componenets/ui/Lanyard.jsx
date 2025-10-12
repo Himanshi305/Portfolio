@@ -8,7 +8,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 // Assets are now in public directory and referenced as URLs
 const cardGLB = "/card.glb";
-const lanyard = "/por-pfp.jpg";
+const lanyard = "/avatar.png";
 
 import * as THREE from 'three';
 
@@ -48,8 +48,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const texture = useTexture(lanyard, (texture) => {
     if (texture) {
       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(2.1, -1.0); // Zoom out and flip
-      texture.offset.x = -0.1; // Shift texture to the right
+      texture.repeat.set(1.6, -1.4); // Zoom out avatar
+      texture.offset.set(0.1, 0); // Shift texture to the left
     }
   }, (error) => {
     console.error('Error loading texture:', error);
@@ -131,14 +131,14 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={2.8}
-            position={[0, -1.2, -0.05]}
+            scale={2.5}
+            position={[0, -1.5, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
             onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}>
             <mesh geometry={nodes.card.geometry}>
-              <meshPhysicalMaterial map={texture} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0} roughness={0.2} metalness={0.5} />
+              <meshPhysicalMaterial map={texture} map-anisotropy={16}  roughness={0.2} metalness={0.5} />
             </mesh>
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />

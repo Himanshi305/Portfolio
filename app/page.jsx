@@ -8,7 +8,7 @@ import Content from "./componenets/content";
 import Project from "./componenets/project";
 import ProjectPreview from "./componenets/ProjectPreview";
 import Lanyard from "./componenets/ui/Lanyard";
-import OnekoCat from "./componenets/OnekoCat";
+import ContactBox from "./componenets/ContactBox";
 
 import {
   FaDiscord,
@@ -20,48 +20,9 @@ import {
 } from "react-icons/fa";
 import { SiJavascript, SiMongodb } from "react-icons/si";
 
-const skills = [
-  {
-    icon: <FaReact />,
-    color: "bg-blue-500",
-    url: "https://react.dev",
-    description: "React.js",
-  },
-  {
-    icon: <FaNodeJs />,
-    color: "bg-green-600",
-    url: "https://nodejs.org",
-    description: "Node.js",
-  },
-  {
-    icon: <SiJavascript />,
-    color: "bg-yellow-400",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    description: "JavaScript",
-  },
-  {
-    icon: <SiMongodb />,
-    color: "bg-green-500",
-    url: "https://www.mongodb.com",
-    description: "Mongodb",
-  },
-];
-
 export default function Home() {
   const lenis = useLenis();
   const containerRef = useRef(null);
-  const [hoveredSkill, setHoveredSkill] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -109,223 +70,144 @@ export default function Home() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <motion.div
-      ref={containerRef}
-      className="min-h-screen bg-[#111111] p-8"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {/* Header Section */}
-      <motion.header
-        className="mb-12"
-        variants={headerVariants}
-        style={{ y: headerY }}
-      >
-        <div className="flex flex-col md:flex-row items-start justify-between">
-          <div className="relative">
-            <motion.h1
-              className="md:text-8xl text-6xl font-bold text-white leading-none font-sora"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              PORTFOLIO
-            </motion.h1>
-          </div>
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            whileHover={{ scale: 1.1, rotate: 5 }}
-          >
-            {/* Avatar placeholder - you can replace with actual image */}
-            <div className="relative top-5 w-32 md:w-90 h-12 md:h-38 flex items-center justify-center shadow-lg bg-gradient-to-br from-[#111111] to-gray-700 rounded-lg m-5 md:m-0 left-10/12 md:left-0">
-              <Image
-                src="/avatar.png"
-                alt="avatar"
-                width={192}
-                height={192}
-                className="object-cover rounded-lg"
-                priority
-              />
-            </div>
-          </motion.div>
-        </div>
-      </motion.header>
-
-      {/* Main Content */}
-      <motion.div
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16"
-        variants={containerVariants}
-        style={{ y: contentY }}
-      >
-        {/* Left Column - Introduction */}
-        <motion.div className="space-y-8" variants={itemVariants}>
-          <div className="flex items-start space-x-6">
-            <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg">
-              <Lanyard />
-            </div>
-            <div className="flex-1">
-              <motion.h2
-                className="text-4xl font-bold text-white mb-4 font-sora"
-                variants={itemVariants}
-              >
-                HI, I'm Himanshi
-              </motion.h2>
-              <motion.span
-                className="text-gray-300 leading-relaxed font-siri"
-                variants={itemVariants}
-              >
-                I am a Full Stack Developer and I love solving problems, and
-                making things feel right.
-                <span>
-                  <ul>
-                  <li>* ReactJs and NextJs professionally </li>
-                  <li>* NodeJs, MongoDB and ExpressJs at an intermediate level</li>
-                  <li>* HTML, CSS and JavaScript professionally</li>
-                  </ul></span>
-              </motion.span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right Column - Experience, Contact, Software */}
+      <div className="">
         <motion.div
-          className="grid md:grid-cols-2 grid-cols-3 md:gap-6 gap-10"
+          ref={containerRef}
+          className="min-h-screen bg-[#111111] p-8"
           variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          {/* Experience Column 1 */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold text-white mb-4 font-sora">
-              EXPERIENCE
-            </h3>
-            <div className="md:space-y-2 text-sm">
-              <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <p className="font-semibold text-white font-siri">Freelancer</p>
-                <p className="text-gray-400 font-siri">aug 2024 - feb 2025</p>
-              </motion.div>
+          {/* Header Section */}
+          <div className="flex ">
+          <div className="left w-1/3 ">
+          <motion.header
+            className="mb-12 "
+            variants={headerVariants}
+            style={{ y: headerY }}
+          >
+            <div className="flex flex-col md:flex-row items-start justify-between ">
+              <motion.h1
+                className="md:text-8xl text-6xl font-bold text-white leading-none font-sora"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                PORTFOLIO
+              </motion.h1>
             </div>
-          </motion.div>
+          </motion.header>
 
-          {/* Contact & Software Column */}
-          <motion.div className="space-y-5" variants={itemVariants}>
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4 font-sora">
-                CONTACT
-              </h3>
-              <div className="space-y-3 text-sm">
-                <motion.div
-                  className="flex items-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <div className="w-6 h-6 border text-white rounded flex items-center justify-center text-lg">
-                    <FaDiscord />
-                  </div>
-                  <a
-                    href="https://discord.com/invite/1242544103586267228"
-                    className="text-pink-400 hover:text-pink-300 font-siri"
+          {/* Main Content */}
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 "
+            variants={containerVariants}
+            style={{ y: contentY }}
+          >
+            {/* Left Column - Introduction */}
+            <motion.div className="space-y-8" variants={itemVariants}>
+              <div className="flex items-start space-x-6 ">
+                <div className="w-25 h-55 rounded-full flex items-center justify-center shadow-lg">
+                  <Lanyard />
+                </div>
+                <div className="flex-1 border border-white/20 p-6 rounded-lg">
+                  <motion.h2
+                    className="text-4xl font-bold text-white mb-4 font-sora"
+                    variants={itemVariants}
                   >
-                    Discord
-                  </a>
-                </motion.div>
-                <motion.div
-                  className="flex items-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <div className="w-6 h-6 border text-white rounded flex items-center justify-center text-sm">
-                    <FaLinkedin />
-                  </div>
-                  <a
-                    href="https://www.linkedin.com/in/himanshi-gupta3005"
-                    className="text-pink-400 hover:text-pink-300 font-siri"
+                    HEYO!
+                  </motion.h2>
+                  <motion.span
+                    className="text-gray-300 leading-relaxed font-siri"
+                    variants={itemVariants}
                   >
-                    LinkedIn
-                  </a>
-                </motion.div>
-                <motion.div
-                  className="flex items-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <div className="w-6 h-6 border text-white rounded flex items-center justify-center text-sm">
-                    <FaEnvelope />
-                  </div>
-                  <a
-                    href="mailto:himanshigupta3005@gmail.com"
-                    className="text-pink-400 hover:text-pink-300 font-siri"
-                  >
-                    Gmail
-                  </a>
-                </motion.div>
-                <motion.div
-                  className="flex items-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <div className="w-6 h-6 border text-white rounded flex items-center justify-center text-sm">
-                    <FaGithub />
-                  </div>
-                  <a
-                    href="https://github.com/Himanshi305"
-                    className="text-pink-400 hover:text-pink-300 font-siri"
-                  >
-                    Github
-                  </a>
-                </motion.div>
+                    <span>You can find my work experience below where I have worked with:
+                    </span>
+                    <ul className="flex gap-5 pt-5">
+                      <li>
+                        <a
+                          href="https://nodejs.org/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Node.js"
+                          className="text-green-300 hover:text-gray-400 transition-colors"
+                        >
+                          <FaNodeJs size={24} />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://reactjs.org/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="React"
+                          className="text-blue-500 hover:text-gray-400 transition-colors"
+                        >
+                          <FaReact size={24} />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.mongodb.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="MongoDB"
+                          className="text-green-500 hover:text-gray-400 transition-colors"
+                        >
+                          <SiMongodb size={24} />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="JavaScript"
+                          className="text-yellow-500 hover:text-gray-400 transition-colors"
+                        >
+                          <SiJavascript size={24} />
+                        </a>
+                      </li>
+                    </ul>
+                  </motion.span>
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4 font-sora justify-center">
-                SKILLS
-              </h3>
-              <div className="grid grid-cols-4 md:gap-10 gap-10 justify-center items-center">
-                {skills.map((skill) => (
-                  <a
-                    key={skill.name}
-                    href={skill.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cursor-none"
-                    onMouseEnter={() => setHoveredSkill(skill)}
-                    onMouseLeave={() => setHoveredSkill(null)}
-                  >
-                    <motion.div
-                      className={`w-8 h-8 ${skill.color} rounded flex items-center justify-center text-white text-sm`}
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                      whileTap={{ scale: 0.9 }}
-                      title={skill.name}
-                    >
-                      {skill.icon}
-                    </motion.div>
-                  </a>
-                ))}
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
+          </div>
+          <div className="right w-1/1 flex justify-end pt-35 pb-20">
+          <div className="text-right border border-white/20 w-180 h-65 p-8 pt-5 rounded-lg">
+      <div className="flex justify-end space-x-9 mb-4">
+        <a href="https://github.com/Himanshi305" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+          <FaGithub size={20} />
+        </a>
+        <a href="https://www.linkedin.com/in/himanshi-gupta3005" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+          <FaLinkedin size={20} />
+        </a>
+        <a href="https://discord.com/users/1242544103586267228" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+          <FaDiscord size={20} />
+        </a>
+      </div>
+      <a href="mailto:himanshigupta3005@gmail.com" className="inline-flex items-center space-x-2 border border-white/20 rounded-full px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors mb-10">
+        <FaEnvelope />
+        <span>Mail me</span>
+      </a>
+      <p className="text-xs text-gray-400 max-w-[250px] mx-auto">
+                    I am a Full Stack Developer and I love solving problems, and
+                    making things feel right.
+      </p>
+      <div>
+        <h3 className="text-lg font-bold text-white mb-4 font-sora text-right">
+          FREELANCER
+        </h3>
+      </div>
+    </div>
+          </div>
+          </div>
+          <Content />
+          <ProjectPreview />
+          <Project />
         </motion.div>
-      </motion.div>
-      {hoveredSkill && (
-        <motion.div
-          className="fixed top-0 left-0 bg-gray-800 text-white p-3 rounded-lg shadow-lg z-[9999] pointer-events-none"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          style={{
-            x: mousePosition.x + 15,
-            y: mousePosition.y + 15,
-          }}
-        >
-          <h4 className="font-bold text-pink-400">{hoveredSkill.name}</h4>
-          <p className="text-sm max-w-0.5">{hoveredSkill.description}</p>
-        </motion.div>
-      )}
-      <Content />
-      <ProjectPreview />
-      <Project />
-    </motion.div>
+      </div>
   );
 }

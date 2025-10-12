@@ -45,7 +45,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className="cursor-none">
       <body className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} ${sora.variable}`}>
         <CustomCursor />
-        <OnekoCat />
         {children}
       </body>
     </html>
