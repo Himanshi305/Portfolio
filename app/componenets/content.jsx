@@ -62,7 +62,7 @@ export default function Content() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
             >
-                    <span className="block w-full text-center font-extrabold text-4xl text-white font-sora">EXPERIENCED IN</span>
+                    <span className="block w-full text-center font-bold text-3xl text-white font-sora">EXPERIENCED IN</span>
             </motion.div>
             <Marquee className="[--duration:20s] max-w-5xl mx-auto p-6">
           {languageCategories.map((skill) => (
