@@ -59,8 +59,8 @@ export default function Project() {
       url:`https://revel-yoga.vercel.app/`
     },
     {
-      title: "REVEL: MOVE",
-      description: "A Full-Stack website for Travelling with adjustable budget and data collection",
+      title: "",
+      description: "",
       image: "/preview-img/revel-move.png",
       number: 4,
       url:`https://revel-move.vercel.app/`

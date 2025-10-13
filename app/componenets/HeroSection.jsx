@@ -24,7 +24,7 @@ return (
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 text-center">
+        <div className="relative z-20 text-center">
             <motion.h1
                 className="text-5xl md:text-7xl font-bold mb-4"
                 initial={{ opacity: 0, y: -20 }}

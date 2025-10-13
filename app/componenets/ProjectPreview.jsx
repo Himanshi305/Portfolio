@@ -124,19 +124,9 @@ export default function ProjectPreview() {
 
   const backendProjects = [
     {
-      title: "REVEL: MOVE",
-      video: "/frontend-preview-video/move-preview.mp4",
-      url: "https://revel-move.vercel.app/"
-    },
-    {
         title: "CHAT-APP",
         video: "/frontend-preview-video/chat-app-preview.mp4",
         url: "https://chatapp.vercel.app/"
-      },
-      {
-        title: "WEATHER-APP",
-        video: "/frontend-preview-video/weather-app-preview.mp4",
-        url: "https://weatherapp.vercel.app/"
       }
   ];
 
