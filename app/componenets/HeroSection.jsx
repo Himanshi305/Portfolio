@@ -39,7 +39,7 @@ return (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
-                A Full-Stack Developer Who Crafts Digital Experiences.
+                A Full-Stack Developer who likes to solve problems. I've had experience in building web applications with modern technologies like React, Next.js, Node.js, and MongoDB.
             </motion.p>
             <motion.div
                 className="flex justify-center gap-4"
