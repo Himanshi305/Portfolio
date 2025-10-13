@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDiscord, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -82,19 +82,20 @@ return (
                     href="https://www.instagram.com/himanshigupta0.0/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-bold text-sm text-gray-700 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400"
+                    className="font-thin text-sm text-white opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400"
                 >
+                    <FaInstagram size={16} className="inline-block mr-1 text-pink-400" />
                     himanshigupta0.0
                 </a>
             </div>
             <div className="flex items-center gap-6">
-                <a href="https://github.com/Himanshi305" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://github.com/Himanshi305" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                     <FaGithub size={20} />
                 </a>
-                <a href="https://www.linkedin.com/in/himanshi-gupta3005" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/in/himanshi-gupta3005" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-white transition-colors">
                     <FaLinkedin size={20} />
                 </a>
-                <a href="https://discord.com/users/1242544103586267228" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://discord.com/users/1242544103586267228" target="_blank" rel="noopener noreferrer" className="text-white border border-white/50 rounded-lg p-0.5 bg-purple-800 hover:text-white transition-colors">
                     <FaDiscord size={20} />
                 </a>
             </div>
