@@ -74,7 +74,8 @@ export default function Project() {
 
   return (
     <>
-      <motion.div 
+      <motion.div
+        id="projects"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         variants={containerVariants}
         initial="hidden"
