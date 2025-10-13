@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local'
 import CustomCursor from "./componenets/ui/CustomCursor";
-import OnekoCat from "./componenets/OnekoCat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

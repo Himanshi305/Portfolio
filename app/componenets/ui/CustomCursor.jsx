@@ -46,32 +46,12 @@ const CustomCursor = () => {
       <svg
         width="32"
         height="32"
-        viewBox="0 0 32 32"
+        viewBox="0 0 256 256"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ transform: 'translate(-2px, -2px)' }} // Slight offset for better pointer alignment
       >
-        {/* Outer Shape */}
-        <path
-          d="M4 4L28 16L20 20L16 28L4 4Z"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        {/* Inner Shape */}
-        <path
-          d="M11.5 11.5L20.5 16L16 20.5L11.5 11.5Z"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        {/* Vertical line of the 'R' */}
-        <path
-            d="M16 28V20.5"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-        />
+        <path d="M76.6287 46.6308L62.4993 34.144L62.5 53.0003L62.5058 208L62.5066 229.287L77.1681 213.855L122.261 166.392L188.193 164.895L209.894 164.403L193.629 150.028L76.6287 46.6308Z" fill="white" stroke="black" strokeWidth="17"/>
       </svg>
     </div>
   );
