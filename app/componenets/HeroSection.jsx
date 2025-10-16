@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
         {/* Avatar */}
         <motion.div
-          className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-full border-4 border-white/20 flex-shrink-0"
+          className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-full  border-4 border-white/20 flex-shrink-0 hover:border-pink-500 transition-colors duration-300"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
