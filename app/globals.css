@@ -50,6 +50,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  /* Additional guard against horizontal overflow caused by transforms or wide elements */
+  overflow-x: hidden;
+}
+
 * {
   cursor: none;
 }
