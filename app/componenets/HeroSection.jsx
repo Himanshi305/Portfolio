@@ -41,7 +41,7 @@ const HeroSection = () => {
             Full-Stack Developer & Creative Coder
           </p>
           <p className="mt-4 text-gray-300">
-            Crafting digital experiences from front-end to back-end. Passionate about clean code and intuitive design.
+            Crafting digital experiences from front-end to back-end. Passionate about clean code and intuitive design. worked with frameworks like React, three.js, React three fiber and libraries like framer-motion to build engaging web applications.
           </p>
         </motion.div>
       </div>
