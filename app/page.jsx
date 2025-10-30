@@ -2,24 +2,25 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SplashScreen from "./componenets/SplashScreen";
 import MainContent from "./componenets/MainContent";
+import HeroSection from "./componenets/HeroSection";
+import Content from "./componenets/content";
+import ProjectPreview from "./componenets/ProjectPreview";
+import Project from "./componenets/project";
+import Contact from "./componenets/Contact";
 
 export default function Home() {
-  const [isSplashVisible, setIsSplashVisible] = useState(true);
+  const [heroReady, setHeroReady] = useState(false);
 
   return (
     <div className="">
-      <AnimatePresence mode="wait">
-        {isSplashVisible ? (
-          <SplashScreen
-            key="splash"
-            onAnimationComplete={() => setIsSplashVisible(false)}
-          />
-        ) : (
-          <MainContent key="main" />
-        )}
-      </AnimatePresence>
+  <HeroSection onReady={() => setHeroReady(true)} />
+  {heroReady && <MainContent />}
+  {heroReady && <Content />}
+  {heroReady && <ProjectPreview />}
+  {heroReady && <Project />}
+  {heroReady && <Contact />}
+
     </div>
   );
 }

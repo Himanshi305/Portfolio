@@ -1,10 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Marquee } from "./marque"
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiExpress, SiNextdotjs, SiTailwindcss, SiJavascript, SiMongodb } from "react-icons/si";
-
+import { Marquee } from "./marque";
+import {
+  FaReact,
+  FaNodeJs
+} from "react-icons/fa";
+import {
+  SiExpress,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiJavascript,
+  SiMongodb,
+} from "react-icons/si";
 
 const languageCategories = [
   {
@@ -49,34 +57,35 @@ const languageCategories = [
     url: "https://www.mongodb.com/",
     color: "#A8B9CC",
   },
-  
-]
+];
 
 export default function Content() {
-    return(
-        <div>
-            {/* Content Section */}
-            <motion.div 
-                className="mb-4 flex justify-center"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-            >
-                    <span className="block w-full text-center font-bold text-3xl text-white font-sora">EXPERIENCED IN</span>
-            </motion.div>
-            <Marquee className="[--duration:20s] max-w-5xl mx-auto p-6">
-          {languageCategories.map((skill) => (
-            <span
-              key={skill.name}
-              className="skill-item px-2 sm:px-3 py-1 bg-foreground/10 rounded-full flex items-center gap-1.5 sm:gap-2 justify-center mx-1 sm:mx-2 flex-shrink-0 cursor-pointer hover:bg-foreground/20 transition-colors"
-            >
-              <div className="relative z-10 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base text-white">
-                <skill.icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                {skill.name}
-              </div>
-            </span>
-          ))}
-        </Marquee>
-        </div>
-    );
+  return (
+    <section id="contact">
+      {/* Content Section */}
+      <motion.div
+        className="mb-4 mt-8 flex justify-center"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        <span className="block w-full text-center font-bold text-3xl text-white font-sora">
+          EXPERIENCED IN
+        </span>
+      </motion.div>
+      <Marquee className="[--duration:20s] max-w-5xl mx-auto p-6">
+        {languageCategories.map((skill) => (
+          <span
+            key={skill.name}
+            className="skill-item px-2 sm:px-3 py-1 bg-foreground/10 rounded-full flex items-center gap-1.5 sm:gap-2 justify-center mx-1 sm:mx-2 flex-shrink-0 cursor-pointer hover:bg-foreground/20 transition-colors"
+          >
+            <div className="relative z-10 flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base text-white">
+              <skill.icon className="w-3 h-3 sm:w-4 sm:h-4" />
+              {skill.name}
+            </div>
+          </span>
+        ))}
+      </Marquee>
+    </section>
+  );
 }

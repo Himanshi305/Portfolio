@@ -36,23 +36,25 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ededed;
+    --background: #111111;
     --foreground: #000000;
   }
 }
 
 
+/* Reset and prevent horizontal overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* guard against accidental horizontal scroll */
+}
+
 body {
-  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  /* Additional guard against horizontal overflow caused by transforms or wide elements */
-  overflow-x: hidden;
 }
 
 * {
