@@ -102,7 +102,7 @@ const HeroSection = ({ onReady }) => {
               <div className="lines"></div>
               <h3 className="font-sora">MENU</h3>
             </div>
-            <nav className="hidden md:flex items-center gap-4">
+            <nav className="hidden md:flex items-center gap-4 font-sora">
               <a href="#about" className="text-sm text-gray-200 hover:text-white px-3 py-1 rounded-md">About</a>
               <a href="#projects" className="text-sm text-gray-200 hover:text-white px-3 py-1 rounded-md">Projects</a>
               <a href="#contact" className="text-sm text-gray-200 hover:text-white px-3 py-1 rounded-md">Contact</a>
