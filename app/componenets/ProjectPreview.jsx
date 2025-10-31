@@ -125,9 +125,9 @@ const slideVariants = {
 
    const backendProjects = [
      {
-         title: "CHAT-APP",
-         video: "/frontend-preview-video/chat-app-preview.mp4",
-         url: "https://chatapp.vercel.app/"
+         title: "URL Shortener",
+         video: "/frontend-preview-video/shawty-preview.mp4",
+         url: "https://shawty.vercel.app/"
        }
    ];
 

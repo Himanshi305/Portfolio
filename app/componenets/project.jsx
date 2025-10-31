@@ -59,11 +59,11 @@ export default function Project() {
 			url: `https://revel-yoga.vercel.app/`,
 		},
 		{
-			title: "REVEL: MOVE",
-			description: "A demo project",
-			image: "/preview-img/revel-move.png",
+			title: "Shawty",
+			description: "A URL shortener web application built with Next.js and Tailwind CSS",
+			image: "/preview-img/shawty-pre.png",
 			number: 4,
-			url: `https://revel-move.vercel.app/`,
+			url: `https://shawty.vercel.app/`,
 		},
 	];
 
