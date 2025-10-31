@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiJavascript } from "react-icons/si";
 
 import { useLenis } from "../hooks/useLenis";
 import { useRef, useState, useEffect } from "react";
@@ -23,22 +25,35 @@ const MainContent = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.95, 0.9]);
 
   return (
-    <div ref={containerRef} className="h-screen w-screen relative overflow-hidden flex">
-      {/* Left: half width image */}
-      <div className=" relative top-40 w-1/3 flex items-center justify-center bg-gradient-to-b from-black via-pink-900 to-black h-1/2 m-3 rounded-full hover:scale-103 transition-transform duration-500 hover:border-pink-800 border-4">
-        <img
-          src="/gta-img/side-pic.png"
-          alt="Himanshi Gupta"
-          className="object-cover h-full rounded-full"
-        />
+    <div
+      ref={containerRef}
+      className="min-h-screen w-screen relative overflow-hidden flex flex-col md:flex-row items-center justify-center gap-6 p-6"
+    >
+      {/* Left: image card (stacks above on small screens) */}
+        <div className="hidden md:flex w-1/3 items-center justify-center">
+        <div className="w-full max-w-sm bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-3">
+          <img
+            src="/gta-img/side-pic.png"
+            alt="Himanshi Gupta"
+              className="object-cover w-full h-80 rounded-lg"
+          />
+        </div>
       </div>
 
       {/* Right: intro card */}
-      <section id="about" className="w-2/3 h-full flex items-center justify-center mt-5">
+      <section id="about" className="w-full md:w-2/3 flex items-center justify-center">
         <motion.div
           style={{ opacity }}
-          className="max-w-full w-full h-1/2 backdrop-blur-md rounded-3xl p-8 text-white "
+          className="w-full max-w-3xl bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col items-center md:items-start"
         >
+            {/* Small-screen inline image: visible only on small viewports and placed inside the card */}
+            <div className="inline-flex md:hidden mx-auto mb-4 rounded-xl p-2 bg-gradient-to-b from-black via-pink-900 to-black items-center justify-center">
+              <img
+                src="/gta-img/side-pic.png"
+                alt="Himanshi Gupta"
+                className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
+              />
+            </div>
           <div className="flex-1 text-white w-full">
             <h1 className="text-2xl md:text-3xl font-extrabold font-sora">Himanshi Gupta</h1>
             <p className="mt-1 text-sm text-gray-600">Full‑Stack Web Developer & Designer</p>
@@ -49,11 +64,60 @@ const MainContent = () => {
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              <span className="text-xs px-3 py-1 bg-white/6 rounded-full text-gray-400">React</span>
-              <span className="text-xs px-3 py-1 bg-white/6 rounded-full text-gray-400">Next.js</span>
-              <span className="text-xs px-3 py-1 bg-white/6 rounded-full text-gray-400">Tailwind</span>
-              <span className="text-xs px-3 py-1 bg-white/6 rounded-full text-gray-400">Node</span>
-              <span className="text-xs px-3 py-1 bg-white/6 rounded-full text-gray-400">TypeScript</span>
+              <a
+                href="https://react.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
+                aria-label="React"
+              >
+                <FaReact className="w-4 h-4 text-blue-500" />
+                <span className="hidden sm:inline">React</span>
+              </a>
+
+              <a
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
+                aria-label="Next.js"
+              >
+                <SiNextdotjs className="w-4 h-4 text-gray-400" />
+                <span className="hidden sm:inline">Next.js</span>
+              </a>
+
+              <a
+                href="https://tailwindcss.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
+                aria-label="Tailwind CSS"
+              >
+                <SiTailwindcss className="w-4 h-4 text-blue-600" />
+                <span className="hidden sm:inline">Tailwind</span>
+              </a>
+
+              <a
+                href="https://nodejs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
+                aria-label="Node.js"
+              >
+                <FaNodeJs className="w-4 h-4 text-green-500" />
+                <span className="hidden sm:inline">Node</span>
+              </a>
+
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
+                aria-label="JavaScript (MDN)"
+              >
+                <SiJavascript className="w-4 h-4 text-yellow-500" />
+                <span className="hidden sm:inline">JavaScript</span>
+              </a>
             </div>
 
             <div className="mt-6 flex gap-3">
@@ -63,8 +127,6 @@ const MainContent = () => {
               >
                 View Work
               </a>
-              
-              
             </div>
           </div>
         </motion.div>
