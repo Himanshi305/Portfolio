@@ -15,7 +15,7 @@ const Contact = () => {
           {/* Social icons (replace href values with your actual profiles) */}
           <div className="mt-2 flex items-center gap-4 justify-center">
             <a
-              href="https://github.com/himanshi305"
+              href="https://github.com/Himanshi305"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -25,23 +25,13 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/himanshigupta3005/"
+              href="https://www.linkedin.com/in/himanshi-gupta3005/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="text-blue-400 hover:text-blue-500 text-xl"
             >
               <FaLinkedin />
-            </a>
-
-            <a
-              href="https://discord.gg/your-invite"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Discord"
-              className="text-indigo-300 hover:text-indigo-200 text-xl"
-            >
-              <FaDiscord />
             </a>
 
             <a
