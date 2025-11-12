@@ -31,11 +31,11 @@ const MainContent = () => {
     >
       {/* Left: image card (stacks above on small screens) */}
         <div className="hidden md:flex w-1/3 items-center justify-center">
-        <div className="w-full max-w-sm bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-3">
+        <div className="w-full max-w-sm bg-pink-500 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-2">
           <img
             src="/gta-img/side-pic.png"
             alt="Himanshi Gupta"
-              className="object-cover w-full h-80 rounded-lg"
+              className="object-contain w-full h-90 rounded-lg bg-gradient-to-b from-black via-pink-900 to-black p-2"
           />
         </div>
       </div>
@@ -44,19 +44,29 @@ const MainContent = () => {
       <section id="about" className="w-full md:w-2/3 flex items-center justify-center">
         <motion.div
           style={{ opacity }}
-          className="w-full max-w-3xl bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col items-center md:items-start"
+          className="w-full max-w-3xl backdrop-blur-md rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col items-center md:items-start relative overflow-hidden"
         >
-            {/* Small-screen inline image: visible only on small viewports and placed inside the card */}
-            <div className="inline-flex md:hidden mx-auto mb-4 rounded-xl p-2 bg-gradient-to-b from-black via-pink-900 to-black items-center justify-center">
-              <img
-                src="/gta-img/side-pic.png"
-                alt="Himanshi Gupta"
-                className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
-              />
-            </div>
-          <div className="flex-1 text-white w-full">
-            <h1 className="text-2xl md:text-3xl font-extrabold font-sora">Himanshi Gupta</h1>
-            <p className="mt-1 text-sm text-gray-600">Full‑Stack Web Developer & Designer</p>
+          {/* Background image (low opacity) - sits behind content */}
+          <div className="absolute inset-0 -z-10">
+            <img
+              src="/gta-img/mix-gta1.png"
+              alt="background"
+              className="w-full h-full object-cover opacity-30 rounded-4xl"
+            />
+          </div>
+
+          {/* Small-screen inline image: visible only on small viewports and placed inside the card */}
+          <div className="inline-flex md:hidden mx-auto mb-4 rounded-xl p-2 bg-gradient-to-b from-black via-pink-900 to-black items-center justify-center z-10">
+            <img
+              src="/gta-img/side-pic.png"
+              alt="Himanshi Gupta"
+              className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
+            />
+          </div>
+
+          <div className="intro flex-1 w-full relative z-10">
+            <h1 className="text-2xl md:text-3xl font-extrabold font-sora text-yellow-400">Himanshi Gupta</h1>
+            <p className="mt-1 text-sm text-gray-400">Full‑Stack Web Developer & Designer</p>
 
             <p className="mt-4 text-gray-300">
               I craft responsive, accessible, and performant web experiences using React, Node.js,
