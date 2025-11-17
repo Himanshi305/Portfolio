@@ -31,7 +31,7 @@ const MainContent = () => {
     >
       {/* Left: image card (stacks above on small screens) */}
         <div className="hidden md:flex w-1/3 items-center justify-center">
-        <div className="w-full max-w-sm bg-pink-500 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-2">
+        <div className="w-full max-w-sm bg-black backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-0.75">
           <img
             src="/gta-img/side-pic.png"
             alt="Himanshi Gupta"
