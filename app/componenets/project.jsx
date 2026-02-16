@@ -64,7 +64,15 @@ export default function Project() {
 			image: "/preview-img/shawty-pre.png",
 			number: 4,
 			url: `https://shawty.vercel.app/`,
-		},
+		}
+		,
+		{
+			title: "Toks",
+			description: "A real-time chat application built with MERN stack and Socket.io",
+			image: "/preview-img/toks-pre.png",
+			number: 5,
+			url: `https://toks-d7ge.onrender.com`,
+		}
 	];
 
 	// Generate accurate screenshot URL (optional helper)
@@ -77,7 +85,7 @@ export default function Project() {
         <h1 className="text-5xl font-bold mb-6 justify-center items-center text-white flex font-sora">My Projects</h1>
 			<motion.div
 				id="projects"
-				className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+				className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-col lg:items-center gap-4 m-4 "
 				variants={containerVariants}
 				initial="hidden"
 				animate="visible"
@@ -85,13 +93,13 @@ export default function Project() {
 				{projects.map((project, index) => (
 					<motion.div
 						key={index}
-						className="shadow-lg bg-black p-6 rounded-2xl text-white relative min-h-[300px] overflow-hidden"
+						className="shadow-lg bg-black p-6 rounded-2xl text-white relative min-h-[300px] overflow-hidden lg:w-full mt-4"
 						variants={projectCardVariants}
 						whileHover="hover"
 					>
 						<a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
-							<div className="space-y-4">
-								<div className="relative w-full h-32 rounded-lg overflow-hidden bg-gray-800">
+							<div className="space-y-4 ">
+								<div className="relative w-full h-50 rounded-lg overflow-hidden bg-gray-800">
 									<Image src={project.image} alt={project.title} fill style={{ objectFit: "cover" }} unoptimized />
 								</div>
 								<h3 className="text-xl font-bold">{project.title}</h3>
