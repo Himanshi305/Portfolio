@@ -27,24 +27,13 @@ const MainContent = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen w-screen relative overflow-hidden flex flex-col md:flex-row items-center justify-center gap-6 p-6"
+      className="min-h-screen w-screen relative overflow-hidden flex flex-col items-center justify-center gap-6 p-6"
     >
-      {/* Left: image card (stacks above on small screens) */}
-        <div className="hidden md:flex w-1/3 items-center justify-center">
-        <div className="w-full max-w-sm bg-black backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-0.75">
-          <img
-            src="/gta-img/side-pic.png"
-            alt="Himanshi Gupta"
-              className="object-contain w-full h-90 rounded-lg bg-gradient-to-b from-black via-pink-900 to-black p-2"
-          />
-        </div>
-      </div>
-
-      {/* Right: intro card */}
-      <section id="about" className="w-full md:w-2/3 flex items-center justify-center">
+      {/* About card */}
+      <section id="about" className="w-full flex items-center justify-center">
         <motion.div
           style={{ opacity }}
-          className="w-full max-w-3xl backdrop-blur-md rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col items-center md:items-start relative overflow-hidden"
+          className="w-full max-w-5xl h-100 backdrop-blur-md rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col md:flex-row items-center relative overflow-hidden"
         >
           {/* Background image (low opacity) - sits behind content */}
           <div className="absolute inset-0 -z-10">
@@ -56,7 +45,7 @@ const MainContent = () => {
           </div>
 
           {/* Small-screen inline image: visible only on small viewports and placed inside the card */}
-          <div className="inline-flex md:hidden mx-auto mb-4 rounded-xl p-2 bg-gradient-to-b from-black via-pink-900 to-black items-center justify-center z-10">
+          <div className="inline-flex md:hidden mx-auto mb-4 rounded-xl p-2 backdrop-blur items-center justify-center z-10">
             <img
               src="/gta-img/side-pic.png"
               alt="Himanshi Gupta"
@@ -64,6 +53,16 @@ const MainContent = () => {
             />
           </div>
 
+          {/* Image card */}
+          <div className="hidden md:block md:w-1/3 md:mr-6 mt-6 md:mt-0 flex-shrink-0">
+            <div className="w-full backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden p-0.75">
+              <img
+                src="/gta-img/side-pic.png"
+                alt="Himanshi Gupta"
+                className="object-contain w-full h-80 rounded-lg backdrop-blur p-2"
+              />
+            </div>
+          </div>
           <div className="intro flex-1 w-full relative z-10">
             <h1 className="text-2xl md:text-3xl font-extrabold font-sora text-yellow-400">Himanshi Gupta</h1>
             <p className="mt-1 text-sm text-gray-400">Full‑Stack Web Developer & Designer</p>
@@ -103,8 +102,19 @@ const MainContent = () => {
                 className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
                 aria-label="Tailwind CSS"
               >
-                <SiTailwindcss className="w-4 h-4 text-blue-600" />
+                <SiTailwindcss className="w-4 h-4 text-cyan-500" />
                 <span className="hidden sm:inline">Tailwind</span>
+              </a>
+
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
+                aria-label="JavaScript"
+              >
+                <SiJavascript className="w-4 h-4 text-yellow-400" />
+                <span className="hidden sm:inline">JavaScript</span>
               </a>
 
               <a
@@ -115,27 +125,7 @@ const MainContent = () => {
                 aria-label="Node.js"
               >
                 <FaNodeJs className="w-4 h-4 text-green-500" />
-                <span className="hidden sm:inline">Node</span>
-              </a>
-
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs px-3 py-1 bg-white/6 rounded-full text-gray-200 hover:bg-white/10 transition"
-                aria-label="JavaScript (MDN)"
-              >
-                <SiJavascript className="w-4 h-4 text-yellow-500" />
-                <span className="hidden sm:inline">JavaScript</span>
-              </a>
-            </div>
-
-            <div className="mt-6 flex gap-3">
-              <a
-                href="#projects"
-                className="inline-flex w-25 items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg text-white text-sm"
-              >
-                View Work
+                <span className="hidden sm:inline">Node.js</span>
               </a>
             </div>
           </div>
